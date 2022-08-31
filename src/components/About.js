@@ -1,30 +1,36 @@
-import React, {useState} from 'react'
+import React from 'react'
 
-export default function About() {
+export default function About(props) {
 
 
-    const [myStyle, setMyStyle] = useState({  
-        color : 'black',
-        backgroundColor: 'white'
-    })
+    // const [myStyle, setMyStyle] = useState({  
+    //     color : 'black',
+    //     backgroundColor: 'white'
+    // })
 
-    const [btnStyle, setbtnStyle] = useState("Enable White Mode") 
+    // let myStyle = {
+    //     color: props.mode === 'light' ? 'dark' : 'light',
+    //     backgroundColor: props.mode === 'dark' ? 'light' : 'dark'
+    // }
 
-    let toggleStyle = () => {
-        if (myStyle.color ==='white') {
-            setMyStyle({
-                color : 'black',
+
+    let myStyle;
+
+    let toggleStyle = (modes) => {
+        if (modes === 'light') {
+            myStyle = {
+                color: 'black',
                 backgroundColor: 'white'
-            })
-            setbtnStyle("Enable Dark Mode")
-        }else {
-            setMyStyle({
-                color : 'white',
-                backgroundColor: 'black'
-            })
-            setbtnStyle("Enable White Mode")
+            }
+        } else {
+            myStyle = {
+                color: 'white',
+                backgroundColor: '#0A1931'
+            }
         }
     }
+
+    toggleStyle(props.mode)
 
     return (
         <div className='container p-4 rounded-3' style={myStyle}>
@@ -127,7 +133,21 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <button className='btn btn-primary mt-4' onClick={toggleStyle}>{btnStyle}</button>
+            <div className="container mt-4">
+                <h1 className='text-center'>Thank's</h1>
+                <p className='text-center'>This website is made posible by CodeWithHarry react tutorial and it is a good corse to learn react tuorial</p>
+                <h3 className='text-center'>React Js Tutorials in Hindi</h3>
+                <div className="d-flex justify-content-center flex-column mt-2">
+                    <a className='d-flex justify-content-center' href="https://youtube.com/playlist?list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt" target="_blank" rel="noopener noreferrer"><img src="./hqdefault.jpg" alt="" /></a>
+                    <a className='text-center stretched-link' href="https://youtube.com/playlist?list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt" target="_blank" rel="noopener noreferrer">Click hear</a>
+                </div>
+                <p className='text-center mt-2'>Complete React Course by CodeWithHarry - Learn ReactJs from scratch in 2022 for FREE.
+                    React is a free and open-source JavaScript library used to build user interfaces and single-page web applications. React is developed and managed by Facebook.
+                    In this course of React Js, we will cover every topic of React so that we can build engaging single-page web applications. This React course is entirely free, and you don't have to pay a single penny to me.
+                    React Js is such a magnificent library that directly competes with a framework such as Angular and Vue.
+                    This React Js course is in the Hindi language so that you can understand each concept clearly.
+                    So, save this playlist and stay tuned for upcoming videos.</p>
+            </div>
         </div>
     )
 }

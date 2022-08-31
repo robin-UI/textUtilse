@@ -43,15 +43,15 @@ export default function TextForm(props) {
                 <div className="form-floating mb-4">
                     <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" value={text} onChange={handleOnChange} style={{ height: "100px" }} rows="8"></textarea>
                 </div>
-                <button className='btn btn-primary me-3 mb-3 ' onClick={handleUpClick}>To Uppercase</button>
-                <button className='btn btn-primary me-3 mb-3 ' onClick={handleLoClick}>To Lowercase</button>
-                <button className='btn btn-primary me-3 mb-3 ' onClick={handleOnClear}>Clear</button>
-                <button className='btn btn-primary me-3 mb-3 ' onClick={handleOnCopy}>Copy</button>
-                <button className='btn btn-primary me-3 mb-3 ' onClick={handleExtraSpaces}>Clear Extra Spaces</button>
+                <button disabled={text.length === 0} className='btn btn-primary me-3 mb-3 ' onClick={handleUpClick}>To Uppercase</button>
+                <button disabled={text.length === 0} className='btn btn-primary me-3 mb-3 ' onClick={handleLoClick}>To Lowercase</button>
+                <button disabled={text.length === 0} className='btn btn-primary me-3 mb-3 ' onClick={handleOnClear}>Clear</button>
+                <button disabled={text.length === 0} className='btn btn-primary me-3 mb-3 ' onClick={handleOnCopy}>Copy</button>
+                <button disabled={text.length === 0} className='btn btn-primary me-3 mb-3 ' onClick={handleExtraSpaces}>Clear Extra Spaces</button>
             </div>
             <div className="container" style={{color: props.mode === "light" ? "#2C3333": "#FEFBF6"}} >
                 <h1>Text summery</h1>
-                <p>{text.split(" ").length} words, {text.length} Character</p>
+                <p>{text.split(/\s+/).filter((element) => {return element.length !== 0}).length} words, {text.length} Character</p>
                 <p>{0.008 * text.split(" ").length} Minuts to read</p>
             </div>
             <div className="container" style={{color: props.mode === "light" ? "#2C3333": "#FEFBF6"}} >

@@ -56,14 +56,14 @@ function App() {
       </BrowserRouter> */}
 
 
-          <Alert alert={alert} />
           
       <Router>
         <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+          <Alert alert={alert} />
         <div className="container mt-4">
         <Routes>
             <Route path="/" element={<TextForm heading="Enter the text to analiyzed" mode={mode} showAlert={showAlert} />}></Route>
-            <Route path="/About" element={<About />}></Route>
+            <Route path="/About" element={<About mode={mode} />}  />
         </Routes>
         </div>
       </Router>
