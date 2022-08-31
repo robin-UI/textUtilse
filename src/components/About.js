@@ -139,7 +139,7 @@ export default function About(props) {
                 <h3 className='text-center'>React Js Tutorials in Hindi</h3>
                 <div className="d-flex justify-content-center flex-column mt-2">
                     <a className='d-flex justify-content-center' href="https://youtube.com/playlist?list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt" target="_blank" rel="noopener noreferrer"><img src="./hqdefault.jpg" alt="" /></a>
-                    <a className='text-center stretched-link' href="https://youtube.com/playlist?list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt" target="_blank" rel="noopener noreferrer">Click hear</a>
+                    <a className='text-center ' href="https://youtube.com/playlist?list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt" target="_blank" rel="noopener noreferrer">Click hear</a>
                 </div>
                 <p className='text-center mt-2'>Complete React Course by CodeWithHarry - Learn ReactJs from scratch in 2022 for FREE.
                     React is a free and open-source JavaScript library used to build user interfaces and single-page web applications. React is developed and managed by Facebook.
